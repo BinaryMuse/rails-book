@@ -1,14 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-  <title>RailsBook</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+  <head>
+    <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</hmtl>
