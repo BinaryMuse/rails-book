@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #cff;
+  background: #C0DEED url('/images/bg-clouds.png') repeat-x;
 }
 
 header {
