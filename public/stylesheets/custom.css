@@ -191,9 +191,3 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
-
-.inline_error {
-  padding-left: 10px;
-  font-size: 12pt;
-  color: red;
-}
