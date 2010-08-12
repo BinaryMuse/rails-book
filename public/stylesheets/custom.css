@@ -137,3 +137,63 @@ td.sidebar {
   border: 1px solid #999;
   margin-bottom: -15px;
 }
+
+/* Signup form */
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* Errors */
+
+.field_with_errors {
+  margin-top: 5px;
+  padding: 0px 10px;
+  background-color: red;
+  display: inline-table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul {
+  margin-bottom: 0;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.inline_error {
+  padding-left: 10px;
+  font-size: 12pt;
+  color: red;
+}
