@@ -13,6 +13,10 @@ module SessionsHelper
     self.current_user = nil
   end
 
+  def require_signed_out
+    redirect_to current_user if signed_in?
+  end
+
   def current_user=(user)
     @current_user = user
   end

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :require_signed_out, :except => [:show]
+
   def show
     @user = User.find(params[:id])
     @title = @user.name

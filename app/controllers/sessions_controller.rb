@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :require_signed_out, :except => [:destroy]
+
   def new
     @title = "Sign in"
   end
