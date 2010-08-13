@@ -1,0 +1,8 @@
+<h1>Edit user</h1>
+
+<%= render 'users/new_edit_form', :object => @user, :text => 'Update' %>
+
+<div>
+  <%= gravatar_for @user %>
+  <a href="http://gravatar.com/emails">Change Gravatar</a>
+</div>

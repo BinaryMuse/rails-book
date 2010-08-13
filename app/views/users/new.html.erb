@@ -1,24 +1,3 @@
 <h1>Sign up</h1>
 
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages' %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :class => 'title' %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :class => 'title' %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, :class => 'title' %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, :class => 'title' %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up", :disable_with => 'Please wait...' %>
-  </div>
-<% end %>
+<%= render 'users/new_edit_form', :object => @user, :text => 'Create' %>

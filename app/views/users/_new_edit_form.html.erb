@@ -1,0 +1,22 @@
+<%= form_for(object) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => 'title' %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :class => 'title' %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :class => 'title' %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, :class => 'title' %>
+  </div>
+  <div class="actions">
+    <%= f.submit text, :disable_with => 'Please wait...' %>
+  </div>
+<% end %>
