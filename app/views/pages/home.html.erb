@@ -1,22 +1,5 @@
 <% if signed_in? %>
-  <table class="front" summary="For signed-in users">
-    <tr>
-      <td class="main">
-        <h1 class="micropost">What's up?</h1>
-        <%= render 'shared/micropost_form' %>
-        <%= render 'shared/feed' %>
-      </td>
-      <td class="sidebar round">
-        <%= render 'shared/user_info' %>
-      </td>
-    </tr>
-  </table>
+  <%= render 'home_signed_in' %>
 <% else %>
-<h1>Welcome to Fritter</h1>
-
-<p>
-  Welcome to Fritter, a microblogging site that may or may not look familiar.
-</p>
-
-<p><%= link_to "Sign up now!", signup_path, :class => "signup_button round" %></p>
+  <%= render 'home_signed_out' %>
 <% end %>
