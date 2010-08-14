@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   has_many :microposts, :dependent => :destroy
 
-  before_save :encrypt_password
+  before_save :downcase_email, :encrypt_password
 
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z0-9]+)\Z/i
 
@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+    def downcase_email
+      self.email.downcase!
+    end
 
     def encrypt_password
       self.salt = make_salt if new_record?

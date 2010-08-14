@@ -59,6 +59,11 @@ describe User do
     user_with_dup_email.should_not be_valid
   end
 
+  it "should save email addresses in lowercase form" do
+    user = User.create!(@attr.merge(:email => @attr[:email].upcase))
+    user.email.should == @attr[:email]
+  end
+
   describe "password validation" do
     it "should require a password" do
       User.new(@attr.merge(:password => "", :password_confirmation => "")).

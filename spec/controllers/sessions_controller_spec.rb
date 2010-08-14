@@ -53,6 +53,15 @@ describe SessionsController do
         post :create, :session => @attr
         response.should redirect_to user_path(@user)
       end
+
+      describe "but an uppercase email" do
+        it "should sign the user in" do
+          @attr[:email].upcase!
+          post :create, :session => @attr
+          controller.current_user.should == @user
+          controller.should be_signed_in
+        end
+      end
     end
   end
 
