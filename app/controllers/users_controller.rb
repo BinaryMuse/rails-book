@@ -12,6 +12,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @micropost = Micropost.new if !@user.nil? and current_user == @user
+    @microposts = @user.microposts.paginate(:page => params[:page], :per_page => 20)
     @title = @user.name
   end
 
