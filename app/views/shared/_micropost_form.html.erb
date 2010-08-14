@@ -4,10 +4,12 @@
     <%= f.text_area :content %>
   </div>
   <div class="actions">
-    <%= f.submit "Post Freet", :disable_with => 'Please wait...', :disabled => true %>
+    <%= f.submit "Post Freet", :disable_with => 'Please wait...' %>
     <span id="micropost_char_count">140 characters left</span>
   </div>
   <script language="JavaScript">
+  $("#micropost_submit").attr('disabled', 'disabled');
+
   function pluralize_characters(num) {
     if(num == 1) {
       return num + " character";
