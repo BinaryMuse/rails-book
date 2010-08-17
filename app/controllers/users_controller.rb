@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-  before_filter :require_signed_in,    :only => [:index, :edit, :update]
-  before_filter :require_correct_user, :only => [:edit, :update]
-  before_filter :require_signed_out,   :only => [:new, :create]
-  before_filter :require_admin_user,   :only => [:destroy]
+  before_filter :require_signed_in,    :except => [:show, :new, :create]
+  before_filter :require_correct_user, :only   => [:edit, :update]
+  before_filter :require_signed_out,   :only   => [:new, :create]
+  before_filter :require_admin_user,   :only   => [:destroy]
 
   def index
     @title = "All users"
@@ -60,6 +60,20 @@ class UsersController < ApplicationController
       flash[:success] = "User destroyed"
     end
     redirect_to users_path
+  end
+
+  def following
+    @user  = User.find(params[:id])
+    @title = "Following #{@user.name}"
+    @users = @user.following.paginate(:page => params[:page], :per_page => 20)
+    render 'show_follow'
+  end
+
+  def followers
+    @user  = User.find(params[:id])
+    @title = "Followers of #{@user.name}"
+    @users = @user.followers.paginate(:page => params[:page], :per_page => 20)
+    render 'show_follow'
   end
 
 end
