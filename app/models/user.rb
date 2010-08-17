@@ -64,11 +64,11 @@ class User < ActiveRecord::Base
   end
 
   def follow!(followed)
-    relationships.create! :followed_id => followed.id
+    relationships.create! :followed_id => followed.id unless self.following? followed
   end
 
   def unfollow!(followed)
-    relationships.find_by_followed_id(followed).destroy
+    relationships.find_by_followed_id(followed).destroy if self.following? followed
   end
 
   private
