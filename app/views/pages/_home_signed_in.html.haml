@@ -1,0 +1,9 @@
+%table.front{:summary => "For signed-in users"}
+  %tr
+    %td.main
+      %h1.micropost What's up?
+      = render 'shared/micropost_form'
+      = render 'shared/feed'
+    %td.sidebar.round
+      = render 'shared/user_info'
+      = render 'shared/stats'

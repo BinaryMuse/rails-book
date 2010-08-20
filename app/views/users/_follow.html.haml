@@ -1,0 +1,3 @@
+= form_for current_user.relationships.build(:followed_id => @user.id), :remote => true do |f|
+  %div= f.hidden_field :followed_id
+  #actions= f.submit "Follow", :disable_with => "Following..."
