@@ -2,11 +2,11 @@
 = form_for(:session, :url => sessions_path) do |f|
   .field
     = f.label :email
-    <br />
+    %br
     = f.text_field :email, :class => 'title', :value => (params[:session].nil?) ? nil : params[:session][:email]
   .field
     = f.label :password
-    <br />
+    %br
     = f.password_field :password, :class => 'title'
   .actions
     = f.submit "Sign in"

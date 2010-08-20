@@ -2,19 +2,19 @@
   = render 'shared/error_messages', :object => f.object
   .field
     = f.label :name
-    <br />
+    %br
     = f.text_field :name, :class => 'title'
   .field
     = f.label :email
-    <br />
+    %br
     = f.text_field :email, :class => 'title'
   .field
     = f.label :password
-    <br />
+    %br
     = f.password_field :password, :class => 'title'
   .field
     = f.label :password_confirmation
-    <br />
+    %br
     = f.password_field :password_confirmation, :class => 'title'
   .actions
     = f.submit text, :disable_with => 'Please wait...'
