@@ -2,8 +2,8 @@
   %td
     %span.content= wrap micropost.content
     %span.timestamp Posted #{time_ago_in_words micropost.created_at} ago.
-  -# workaround for weird rails but, listing 11.38
-  -# note that workaround in book doesn't work in HAML,
+  -# workaround for weird rails bug, listing 11.38
+  -# note that workaround in book doesn't work in Haml,
   -# hitting database again for each user unfortunately
   - cu = User.find(micropost.user_id)
   - if current_user == cu
